@@ -18,27 +18,31 @@ export const TaskStats = ({ stats }: TaskStatsProps) => {
       icon: Target,
       color: 'text-primary',
       bg: 'bg-gradient-primary',
+      shadow: 'shadow-glow',
     },
     {
       title: 'Completed',
       value: stats.completed,
       icon: CheckCircle,
       color: 'text-success',
-      bg: 'bg-success',
+      bg: 'bg-gradient-success',
+      shadow: 'shadow-shopping-glow',
     },
     {
       title: 'Pending',
       value: stats.pending,
       icon: Clock,
       color: 'text-warning',
-      bg: 'bg-warning',
+      bg: 'bg-gradient-warning',
+      shadow: 'shadow-glow',
     },
     {
       title: 'High Priority',
       value: stats.highPriority,
       icon: AlertTriangle,
       color: 'text-destructive',
-      bg: 'bg-destructive',
+      bg: 'bg-gradient-to-r from-destructive to-red-600',
+      shadow: 'shadow-glow',
     },
   ];
 
@@ -48,7 +52,7 @@ export const TaskStats = ({ stats }: TaskStatsProps) => {
         const IconComponent = stat.icon;
         
         return (
-          <Card key={stat.title} className="glass-card hover:shadow-glow transition-smooth">
+          <Card key={stat.title} className={`glass-card hover:${stat.shadow} transition-smooth animate-float`}>
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -57,8 +61,8 @@ export const TaskStats = ({ stats }: TaskStatsProps) => {
                   </p>
                   <p className="text-2xl font-bold">{stat.value}</p>
                 </div>
-                <div className={`p-2 rounded-lg ${stat.bg} bg-opacity-20`}>
-                  <IconComponent className={`w-4 h-4 ${stat.color}`} />
+                <div className={`p-3 rounded-xl ${stat.bg} ${stat.shadow}`}>
+                  <IconComponent className={`w-5 h-5 text-white`} />
                 </div>
               </div>
             </CardContent>

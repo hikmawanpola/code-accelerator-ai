@@ -13,16 +13,16 @@ interface TaskCardProps {
 }
 
 const priorityColors = {
-  low: 'bg-muted text-muted-foreground',
-  medium: 'bg-warning text-warning-foreground',
-  high: 'bg-destructive text-destructive-foreground',
+  low: 'bg-muted text-muted-foreground border-muted',
+  medium: 'bg-gradient-warning text-warning-foreground border-warning shadow-glow',
+  high: 'bg-gradient-to-r from-destructive to-red-600 text-destructive-foreground border-destructive shadow-glow',
 };
 
 const categoryColors = {
-  personal: 'bg-gradient-primary text-primary-foreground',
-  work: 'bg-secondary text-secondary-foreground',
-  shopping: 'bg-success text-success-foreground',
-  health: 'bg-accent text-accent-foreground',
+  personal: 'bg-gradient-personal text-personal-foreground border-personal shadow-personal-glow',
+  work: 'bg-gradient-work text-work-foreground border-work shadow-work-glow',
+  shopping: 'bg-gradient-shopping text-shopping-foreground border-shopping shadow-shopping-glow',
+  health: 'bg-gradient-health text-health-foreground border-health shadow-health-glow',
 };
 
 export const TaskCard = ({ task, onToggle, onDelete, onEdit }: TaskCardProps) => {
