@@ -2,91 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Task Management Design System - Beautiful gradients and glass morphism */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Dark elegant background */
-    --background: 220 13% 8%;
-    --foreground: 220 9% 95%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    /* Glass morphism cards with better contrast */
-    --card: 220 13% 10%;
-    --card-foreground: 220 9% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 220 13% 10%;
-    --popover-foreground: 220 9% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Vibrant primary - Electric Blue */
-    --primary: 210 100% 65%;
-    --primary-foreground: 220 13% 8%;
-    
-    /* Complementary secondary - Warm Gray */
-    --secondary: 220 13% 18%;
-    --secondary-foreground: 220 9% 95%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Subtle muted tones */
-    --muted: 220 13% 15%;
-    --muted-foreground: 220 9% 70%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    /* Accent - Purple */
-    --accent: 270 80% 65%;
-    --accent-foreground: 220 13% 8%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Status colors with good contrast */
-    --destructive: 0 75% 60%;
-    --destructive-foreground: 220 13% 8%;
-    
-    --success: 142 70% 50%;
-    --success-foreground: 220 13% 8%;
-    
-    --warning: 38 95% 55%;
-    --warning-foreground: 220 13% 8%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    /* Category-specific colors */
-    --personal: 330 80% 65%;
-    --personal-foreground: 220 13% 8%;
-    
-    --work: 200 85% 60%;
-    --work-foreground: 220 13% 8%;
-    
-    --shopping: 120 70% 55%;
-    --shopping-foreground: 220 13% 8%;
-    
-    --health: 15 90% 65%;
-    --health-foreground: 220 13% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Borders and inputs */
-    --border: 220 13% 25%;
-    --input: 220 13% 20%;
-    --ring: 210 100% 65%;
-
-    /* Enhanced gradients with more variation */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 65%), hsl(240 80% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(270 80% 65%), hsl(300 70% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%) 0%, hsl(240 15% 12%) 30%, hsl(260 20% 15%) 70%, hsl(280 25% 18%) 100%);
-    --gradient-success: linear-gradient(135deg, hsl(142 70% 50%), hsl(162 65% 45%));
-    --gradient-warning: linear-gradient(135deg, hsl(38 95% 55%), hsl(48 90% 50%));
-    --gradient-personal: linear-gradient(135deg, hsl(330 80% 65%), hsl(350 75% 60%));
-    --gradient-work: linear-gradient(135deg, hsl(200 85% 60%), hsl(220 80% 65%));
-    --gradient-shopping: linear-gradient(135deg, hsl(120 70% 55%), hsl(140 65% 50%));
-    --gradient-health: linear-gradient(135deg, hsl(15 90% 65%), hsl(35 85% 60%));
-    
-    /* Glass morphism with better opacity */
-    --glass-bg: hsla(220, 13%, 8%, 0.7);
-    --glass-border: hsla(220, 9%, 95%, 0.15);
-    
-    /* Enhanced shadows */
-    --shadow-elegant: 0 20px 25px -5px hsla(210, 100%, 65%, 0.15), 0 10px 10px -5px hsla(210, 100%, 65%, 0.08);
-    --shadow-glow: 0 0 50px hsla(210, 100%, 65%, 0.4);
-    --shadow-personal: 0 0 30px hsla(330, 80%, 65%, 0.3);
-    --shadow-work: 0 0 30px hsla(200, 85%, 60%, 0.3);
-    --shadow-shopping: 0 0 30px hsla(120, 70%, 55%, 0.3);
-    --shadow-health: 0 0 30px hsla(15, 90%, 65%, 0.3);
-    
-    /* Smooth transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
 
@@ -153,32 +101,5 @@
 
   body {
     @apply bg-background text-foreground;
-    background: var(--gradient-hero);
-    min-height: 100vh;
-  }
-
-  /* Glass morphism utilities */
-  .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-  }
-
-  .glass-card {
-    @apply glass rounded-xl p-6;
-    box-shadow: var(--shadow-elegant);
-  }
-
-  .glow {
-    box-shadow: var(--shadow-glow);
-  }
-
-  /* Smooth transitions */
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-
-  .transition-bounce {
-    transition: var(--transition-bounce);
   }
 }
